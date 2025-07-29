@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Patidar Property</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+    .w3-row-padding img {margin-bottom: 12px}
+    /* Set the width of the sidebar to 120px */
+    .w3-sidebar {width: 120px;background: #222;}
+    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+    #main {margin-left: 120px}
+    /* Remove margins from "page content" on small screens */
+    @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+	
+	.contact-heading,
+	.address-heading {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+
+  .contacts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    flex: 1 1 calc(25% - 20px);
+    min-width: 250px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .contact-card img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  .contact-info p {
+    margin: 4px 0;
+  }
+
+  .address-container {
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  .address-text a {
+    font-size: 18px;
+    line-height: 1.6;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+  }
+
+  .address-text a:hover {
+    text-decoration: underline;
+    color: #007BFF;
+  }
+
+  .map-icon {
+    font-size: 22px;
+    vertical-align: middle;
+    margin-right: 6px;
+    color: #D32F2F;
+  }
+
+  @media (max-width: 600px) {
+    .contact-card {
+      flex: 1 1 100%;
+    }
+
+    .contact-heading,
+    .address-heading {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    .address-text a {
+      font-size: 16px;
+    }
+  }
+  
+  
+  /* project Container styling */
+ .project-summary {
+    font-family: Arial, sans-serif;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .project-summary h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .project-card {
+    width: 280px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-align: center;
+    background-color: #fff;
+    transition: transform 0.2s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .project-image {
+    width: 100%;
+  height: 160px; /* fixed height */
+  object-fit: cover; /* crop to fit without distortion */
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  }
+  
+
+  .project-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+
+  .project-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .project-actions a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #444;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    transition: all 0.2s ease;
+  }
+
+  .project-actions a:hover {
+    background-color: #007BFF;
+    color: white;
+    border-color: #007BFF;
+  }
+
+  .icon::before {
+    margin-right: 6px;
+  }
+
+  .download-icon::before {
+    content: "⬇️";
+  }
+
+  .call-icon::before {
+    content: "📞";
+  }
+
+  .whatsapp-icon::before {
+    content: "💬";
+    color: #25D366;
+  }
+
+  @media (max-width: 600px) {
+    .projects-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project-card {
+      width: 90%;
+    }
+  }
+    </style>
+  </head>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="logo.png" style="width:100%">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>ABOUT</p>
+  </a>
+  <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>Projects</p>
+  </a>
+  <a href="#gallery" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>GALLERY</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:20% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:20% !important">ABOUT</a>
+    <a href="#projects" class="w3-bar-item w3-button" style="width:20% !important">PROJECTS</a>
+	<a href="#gallery" class="w3-bar-item w3-button" style="width:20% !important">GALLERY</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:20% !important">CONTACT</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div>
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h3 class="w3-xxlarge"><span class="w3-hide-small">We are </span>Patidar Property</h3>
+    <p> Deal & Construction (Nimad Wale)</p>
+    <img src="one.jpeg" alt="boy" class="w3-image" width="600" height="300">
+  </header>
+
+  <!-- Contact Heading -->
+<div class="contact-heading">Contact</div>
+
+<!-- Contacts Section -->
+<div class="contacts-container">
+  <div class="contact-card">
+    <img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="Avatar">
+    <div class="contact-info">
+      <p><strong>Dharmendra Patidar</strong></p>
+      <p>
+        📞 <a href="tel:9754101055" style="text-decoration: none; color: inherit;">9754101055</a><br>
+        💬 <a href="https://wa.me/919754101055" target="_blank" style="text-decoration: none; color: green;">WhatsApp</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="contact-card">
+    <img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="Avatar">
+    <div class="contact-info">
+      <p><strong>Dhiraj Patidar</strong></p>
+      <p>
+        📞 <a href="tel:9039582438" style="text-decoration: none; color: inherit;">9039582438</a><br>
+        💬 <a href="https://wa.me/919039582438" target="_blank" style="text-decoration: none; color: green;">WhatsApp</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="contact-card">
+    <img src="https://www.w3schools.com/w3images/bandmember.jpg" alt="Avatar">
+    <div class="contact-info">
+      <p><strong>Chanchal Patidar</strong></p>
+      <p>
+        📞 <a href="tel:8878399198" style="text-decoration: none; color: inherit;">8878399198</a><br>
+        💬 <a href="https://wa.me/918878399198" target="_blank" style="text-decoration: none; color: green;">WhatsApp</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="contact-card">
+    <img src="https://www.w3schools.com/w3images/avatar_g2.jpg" alt="Avatar">
+    <div class="contact-info">
+      <p><strong>Rasmi Madam</strong></p>
+      <p>
+        📞 <a href="tel:7692095559" style="text-decoration: none; color: inherit;">7692095559</a><br>
+        💬 <a href="https://wa.me/917692095559" target="_blank" style="text-decoration: none; color: green;">WhatsApp</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Office Address Section -->
+<div class="address-container">
+  <div class="address-heading">Office Address</div>
+  <div class="address-text">
+    <a href="https://maps.app.goo.gl/FfzVy6J9BS7vTw967?g_st=awb" target="_blank" rel="noopener">
+      <span class="map-icon">📍</span>
+      B-504 Silicon City,<br>Balaji Chowk, Indore
+    </a>
+  </div>
+</div>
+  
+  </div>
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey" id="about">
+    <h2 class="w3-text-light-grey">Building Dreams with Trust, Your Property Partner in Indore & Nimad</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>Patidar Property Deal & Construction (Nimad Wale) is a trusted real estate and construction company serving Indore and the Nimad region. Over the years, we have helped countless families, investors, and farmers find the right property or build their dream spaces. Our team combines local knowledge, technical expertise, and personalized service to deliver outstanding results.
+    </p>
+    <h3 class="w3-padding-16 w3-text-light-grey">Our Vision</h3>
+     <hr style="width:200px" class="w3-opacity">
+    <p>To become the most trusted and preferred real estate and construction partner in Indore and the Nimad region by delivering quality properties, transparent services, and exceptional value for every client. We envision a future where every family has access to reliable property solutions, and every dream home becomes a reality through our commitment and integrity.</p>
+    <h3 class="w3-padding-16 w3-text-light-grey">Our Mission</h3>
+     <hr style="width:200px" class="w3-opacity">
+    <ul>
+	<li>To offer end-to-end real estate and construction services that are transparent, reliable, and tailored to individual needs.</li>
+	<li>To simplify the process of buying, selling, and building properties through expert guidance and professional execution.</li>
+	<li>To uphold the highest standards of quality, trust, and customer satisfaction in every project we undertake.</li>
+	<li>To foster long-term relationships with clients through honest dealings, timely delivery, and consistent support.</li>
+	</ul>
+    </div>
+ 
+
+  
+  <div class="w3-content w3-justify" id="projects">
+  
+  <div class="project-summary">
+ 
+<div class="address-container">
+  <div class="address-heading">Our Projects</div>
+</div>
+  <div class="projects-grid">
+    <!-- Project 1 -->
+    <div class="project-card">
+      <a href="Combine MLP.pdf" target="_blank">
+        <img src="img1.jpg" alt="Project 1 Preview" class="project-image" />
+      </a>
+      <div class="project-name">Silver Star City, Indore</div>
+      <div class="project-actions">
+        <a href="Combine MLP.pdf" download class="download-icon">Download</a>
+        <a href="tel:+919754101055" class="call-icon">Call</a>
+        <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Chat on WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <a href="silicon valley map.pdf" target="_blank">
+        <img src="img2.png" alt="Project 2 Preview" class="project-image" />
+      </a>
+      <div class="project-name">Silicon Valley Bypass, Indore</div>
+      <div class="project-actions">
+        <a href="silicon valley map.pdf" download class="download-icon">Download</a>
+        <a href="tel:+919754101055" class="call-icon">Call</a>
+        <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Chat on WhatsApp</a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <a href="Shubham Valley 24.12.23.pdf" target="_blank">
+        <img src="img3.png" alt="Project 3 Preview" class="project-image" />
+      </a>
+      <div class="project-name">Shubham Valley MR3 Bypass, Indore</div>
+      <div class="project-actions">
+        <a href="Shubham Valley 24.12.23.pdf" download class="download-icon">Download</a>
+        <a href="tel:+919754101055" class="call-icon">Call</a>
+        <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Chat on WhatsApp</a>
+      </div>
+    </div>
+	
+	  <!-- Project 4 -->
+    <div class="project-card">
+      <a href="SILICON CITY - AA COLOR PLAN.pdf" target="_blank">
+        <img src="img4.png" alt="Project 3 Preview" class="project-image" />
+      </a>
+      <div class="project-name">Silicon City AA, Indore</div>
+      <div class="project-actions">
+        <a href="SILICON CITY - AA COLOR PLAN.pdf" download class="download-icon">Download</a>
+        <a href="tel:+919754101055" class="call-icon">Call</a>
+        <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Chat on WhatsApp</a>
+      </div>
+    </div>
+	
+	  <!-- Project 5 -->
+    <div class="project-card">
+      <a href="COMBINED SALES PLAN NEW.pdf" target="_blank">
+        <img src="img5.png" alt="Project 3 Preview" class="project-image" />
+      </a>
+      <div class="project-name">Combined Sales Plan</div>
+      <div class="project-actions">
+        <a href="COMBINED SALES PLAN NEW.pdf" download class="download-icon">Download</a>
+        <a href="tel:+919754101055" class="call-icon">Call</a>
+        <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Chat on WhatsApp</a>
+      </div>
+    </div>
+	
+	  <!-- Project 6 -->
+    <div class="project-card">
+      <a href="Vrindavan Premium SALEABLE-Model.pdf" target="_blank">
+        <img src="img6.png" alt="Project 3 Preview" class="project-image" />
+      </a>
+      <div class="project-name">Vrindavan Premium, Indore</div>
+      <div class="project-actions">
+        <a href="Vrindavan Premium SALEABLE-Model.pdf" download class="download-icon">Download</a>
+        <a href="tel:+919754101055" class="call-icon">Call</a>
+        <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Chat on WhatsApp</a>
+      </div>
+    </div>
+	
+	  <!-- Project 7 -->
+    <div class="project-card">
+      <a href="NIHALPUR-REVISED-SALE-PLAN(1).pdf" target="_blank">
+        <img src="img7.png" alt="Project 3 Preview" class="project-image" />
+      </a>
+      <div class="project-name">Omaxe Hills, Rau, Indore</div>
+      <div class="project-actions">
+        <a href="NIHALPUR-REVISED-SALE-PLAN(1).pdf" download class="download-icon">Download</a>
+        <a href="tel:+919754101055" class="call-icon">Call</a>
+        <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Chat on WhatsApp</a>
+      </div>
+    </div>
+	
+	
+	  <!-- Project 8 -->
+    <div class="project-card">
+      <a href="img8.jpeg" target="_blank">
+        <img src="img8.jpeg" alt="Project 3 Preview" class="project-image" />
+      </a>
+      <div class="project-name">Awadh Homes, Indore</div>
+      <div class="project-actions">
+        <a href="img8.jpeg" download class="download-icon">Download</a>
+        <a href="tel:+919754101055" class="call-icon">Call</a>
+        <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Chat on WhatsApp</a>
+      </div>
+    </div>
+	
+	  <!-- Project 9 -->
+    <div class="project-card">
+      <a href="03 Sales Phase I & II.pdf" target="_blank">
+        <img src="img9.png" alt="Project 3 Preview" class="project-image" />
+      </a>
+      <div class="project-name">Silver Sky Park, Indore</div>
+      <div class="project-actions">
+        <a href="03 Sales Phase I & II.pdf" download class="download-icon">Download</a>
+        <a href="tel:+919754101055" class="call-icon">Call</a>
+        <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Chat on WhatsApp</a>
+      </div>
+    </div>
+	
+	
+  </div>
+</div>
+</div>
+   <div class="w3-content w3-justify" id="gallery">
+   <div class="address-container">
+  <div class="address-heading">Gallery</div>
+</div>
+    <!-- Grid for gallery -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div >
+        <img src="gallery_img1.png" style="width:110%">
+        
+      </div>
+
+     <!-- <div class="w3-half">
+        <img src="https://www.w3schools.com/w3images/underwater.jpg" style="width:100%">
+        <img src="https://www.w3schools.com/w3images/chef.jpg" style="width:100%">
+        <img src="https://www.w3schools.com/w3images/wedding.jpg" style="width:100%">
+        <img src="https://www.w3schools.com/w3images/p6.jpg" style="width:100%">
+      </div>
+	  -->
+   </div>   
+   </div>
+
+   
+    <!-- End photo grid -->
+   
+  <!-- End Portfolio Section -->
+ 
+
+  <!-- Contact Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Us</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> <a href="https://maps.app.goo.gl/FfzVy6J9BS7vTw967?g_st=awb" target="_blank" rel="noopener">
+      B-504 Silicon City, Balaji Chowk, Indore
+    </a></p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: <a href="tel:+919754101055"> +91 9754101055 </a></p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+    </div><br>
+    <p>Let's get in touch. Send us a message or call on WhatsApp:</p>
+
+ <div class="project-actions">
+        
+        <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Click here to connect</a>
+      </div>
+  
+  <!-- End Contact Section -->
+  </div>
+  
+<!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+<footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <!-- <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i> -->
+ <!-- End footer -->
+</footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
