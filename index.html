@@ -142,6 +142,7 @@
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 12px;
+	color: #000;
   }
 
   .project-actions {
@@ -195,6 +196,71 @@
       width: 90%;
     }
   }
+  
+  body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #e6f7ff; /* Light Blue Background */
+  color: #333333; /* Dark Gray Text */
+}
+
+.w3-black {
+  background-color: #e6f7ff !important; /* Override W3.css black */
+  color: #003366 !important;
+}
+
+.w3-text-grey, .w3-text-light-grey {
+  color: #003366 !important;
+}
+
+.w3-bar, .w3-top {
+  background-color: #003366 !important;
+  color: #fff !important;
+}
+
+.w3-sidebar {
+  background: linear-gradient(#003366, #005580);
+  color: #fff;
+}
+
+.w3-bar-item:hover, .w3-button:hover {
+  background-color: #66b2ff !important;
+  color: white !important;
+}
+
+.contact-card,
+.project-card {
+  background-color: #ffffff;
+  color: #003366;
+  border: 1px solid #d0e7f9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.project-name {
+  color: #003366;
+}
+
+.project-actions a {
+  background-color: #f0f8ff;
+  color: #003366;
+  border-color: #cce5ff;
+}
+
+.project-actions a:hover {
+  background-color: #66b2ff;
+  color: white;
+  border-color: #66b2ff;
+}
+
+.address-container .map-icon {
+  color: #003366;
+}
+
+a {
+  color: #003366;
+}
+a:hover {
+  color: #007BFF;
+}
     </style>
   </head>
 <body class="w3-black">
@@ -241,9 +307,9 @@
 <div class="w3-padding-large" id="main">
   <!-- Header/Home -->
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h3 class="w3-xxlarge"><span class="w3-hide-small">We are </span>Patidar Property</h3>
-    <p> Deal & Construction (Nimad Wale)</p>
-    <img src="one.jpeg" alt="boy" class="w3-image" width="600" height="300">
+    <!-- <h3 class="w3-xxlarge"><span class="w3-hide-small">We are </span>Patidar Property</h3>
+    <p> Deal & Construction (Nimad Wale)</p> -->
+    <img src="one.jpeg" alt="boy" class="w3-image" width="1000" height="300">
   </header>
 
   <!-- Contact Heading -->
@@ -257,7 +323,10 @@
       <p><strong>Dharmendra Patidar</strong></p>
       <p>
         📞 <a href="tel:9754101055" style="text-decoration: none; color: inherit;">9754101055</a><br>
-        💬 <a href="https://wa.me/919754101055" target="_blank" style="text-decoration: none; color: green;">WhatsApp</a>
+          <a href="https://wa.me/919754101055" target="_blank" style="text-decoration:none; color:#003366; display:inline-flex; align-items:center;">
+  <img src="https://img.icons8.com/color/24/000000/whatsapp--v1.png" alt="WhatsApp" style="width:20px; height:20px; margin-right:6px;">
+  WhatsApp
+</a>
       </p>
     </div>
   </div>
@@ -268,8 +337,11 @@
       <p><strong>Dhiraj Patidar</strong></p>
       <p>
         📞 <a href="tel:9039582438" style="text-decoration: none; color: inherit;">9039582438</a><br>
-        💬 <a href="https://wa.me/919039582438" target="_blank" style="text-decoration: none; color: green;">WhatsApp</a>
-      </p>
+		<a href="https://wa.me/919039582438" target="_blank" style="text-decoration:none; color:#003366; display:inline-flex; align-items:center;">
+  <img src="https://img.icons8.com/color/24/000000/whatsapp--v1.png" alt="WhatsApp" style="width:20px; height:20px; margin-right:6px;">
+  WhatsApp
+</a>
+  </p>
     </div>
   </div>
 
@@ -279,8 +351,10 @@
       <p><strong>Chanchal Patidar</strong></p>
       <p>
         📞 <a href="tel:8878399198" style="text-decoration: none; color: inherit;">8878399198</a><br>
-        💬 <a href="https://wa.me/918878399198" target="_blank" style="text-decoration: none; color: green;">WhatsApp</a>
-      </p>
+		<a href="https://wa.me/918878399198" target="_blank" style="text-decoration:none; color:#003366; display:inline-flex; align-items:center;">
+  <img src="https://img.icons8.com/color/24/000000/whatsapp--v1.png" alt="WhatsApp" style="width:20px; height:20px; margin-right:6px;">
+  WhatsApp
+</a>   </p>
     </div>
   </div>
 
@@ -290,8 +364,10 @@
       <p><strong>Rasmi Madam</strong></p>
       <p>
         📞 <a href="tel:7692095559" style="text-decoration: none; color: inherit;">7692095559</a><br>
-        💬 <a href="https://wa.me/917692095559" target="_blank" style="text-decoration: none; color: green;">WhatsApp</a>
-      </p>
+		<a href="https://wa.me/917692095559" target="_blank" style="text-decoration:none; color:#003366; display:inline-flex; align-items:center;">
+  <img src="https://img.icons8.com/color/24/000000/whatsapp--v1.png" alt="WhatsApp" style="width:20px; height:20px; margin-right:6px;">
+  WhatsApp
+</a> </p>
     </div>
   </div>
 </div>
@@ -350,8 +426,21 @@
         <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Chat on WhatsApp</a>
       </div>
     </div>
+	
+	  <!-- Project 2 a -->
+    <div class="project-card">
+      <a href="silicon valley D.jpeg" target="_blank">
+        <img src="silicon valley D.jpeg" alt="Project 2 Preview" class="project-image" />
+      </a>
+      <div class="project-name">Silicon Valley D Sector, Indore</div>
+      <div class="project-actions">
+        <a href="silicon valley D.jpeg" download class="download-icon">Download</a>
+        <a href="tel:+919754101055" class="call-icon">Call</a>
+        <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Chat on WhatsApp</a>
+      </div>
+    </div>
 
-    <!-- Project 2 -->
+    <!-- Project 2 b -->
     <div class="project-card">
       <a href="silicon valley map.pdf" target="_blank">
         <img src="img2.png" alt="Project 2 Preview" class="project-image" />
@@ -392,12 +481,12 @@
 	
 	  <!-- Project 5 -->
     <div class="project-card">
-      <a href="COMBINED SALES PLAN NEW.pdf" target="_blank">
+      <a href="Awadh homes.pdf" target="_blank">
         <img src="img5.png" alt="Project 3 Preview" class="project-image" />
       </a>
-      <div class="project-name">Combined Sales Plan</div>
+      <div class="project-name">Awadh Homes</div>
       <div class="project-actions">
-        <a href="COMBINED SALES PLAN NEW.pdf" download class="download-icon">Download</a>
+        <a href="Awadh homes.pdf" download class="download-icon">Download</a>
         <a href="tel:+919754101055" class="call-icon">Call</a>
         <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Chat on WhatsApp</a>
       </div>
@@ -432,25 +521,12 @@
 	
 	  <!-- Project 8 -->
     <div class="project-card">
-      <a href="img8.jpeg" target="_blank">
-        <img src="img8.jpeg" alt="Project 3 Preview" class="project-image" />
-      </a>
-      <div class="project-name">Awadh Homes, Indore</div>
-      <div class="project-actions">
-        <a href="img8.jpeg" download class="download-icon">Download</a>
-        <a href="tel:+919754101055" class="call-icon">Call</a>
-        <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Chat on WhatsApp</a>
-      </div>
-    </div>
-	
-	  <!-- Project 9 -->
-    <div class="project-card">
-      <a href="03 Sales Phase I & II.pdf" target="_blank">
-        <img src="img9.png" alt="Project 3 Preview" class="project-image" />
+      <a href="Silver Sky Park E-Brochure.pdf" target="_blank">
+        <img src="img8.png" alt="Project 3 Preview" class="project-image" />
       </a>
       <div class="project-name">Silver Sky Park, Indore</div>
       <div class="project-actions">
-        <a href="03 Sales Phase I & II.pdf" download class="download-icon">Download</a>
+        <a href="Silver Sky Park E-Brochure.pdf" download class="download-icon">Download</a>
         <a href="tel:+919754101055" class="call-icon">Call</a>
         <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Chat on WhatsApp</a>
       </div>
@@ -493,18 +569,31 @@
     <hr style="width:200px" class="w3-opacity">
 
     <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> <a href="https://maps.app.goo.gl/FfzVy6J9BS7vTw967?g_st=awb" target="_blank" rel="noopener">
+  <p>
+    <i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right" style="color:#003366;"></i>
+    <a href="https://maps.app.goo.gl/FfzVy6J9BS7vTw967?g_st=awb" target="_blank" rel="noopener">
       B-504 Silicon City, Balaji Chowk, Indore
-    </a></p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: <a href="tel:+919754101055"> +91 9754101055 </a></p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
-    </div><br>
+    </a>
+  </p>
+  <p>
+    <i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right" style="color:#003366;"></i>
+    Phone: <a href="tel:+919754101055">+91 9754101055</a>
+  </p>
+  <p>
+    <i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right" style="color:#003366;"></i>
+    Email: mail@mail.com
+  </p>
+</div>
+
+<br>
     <p>Let's get in touch. Send us a message or call on WhatsApp:</p>
 
  <div class="project-actions">
-        
-        <a href="https://wa.me/919754101055" target="_blank" class="whatsapp-icon">Click here to connect</a>
-      </div>
+ <a href="https://wa.me/919754101055" target="_blank" style="text-decoration:none; font-size:16px; color:#003366; display:inline-flex; align-items:center;">
+  <img src="https://img.icons8.com/color/24/000000/whatsapp--v1.png" alt="WhatsApp" style="width:20px; height:20px; margin-right:6px;">
+  Click here to connect
+</a>
+       </div>
   
   <!-- End Contact Section -->
   </div>
