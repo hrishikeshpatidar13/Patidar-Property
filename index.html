@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <style>
     body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     .w3-row-padding img {margin-bottom: 12px}
@@ -262,6 +263,68 @@ a {
 a:hover {
   color: #007BFF;
 }
+
+#gallery {
+      width: 90%;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 400px;
+	  aspect-ratio: 16 / 9;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+	
+	#lightbox-overlay {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 10000;
+}
+
+#lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 10001;
+}
+#single-image-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+#single-image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer; /* if you want it clickable */
+}
+
     </style>
   </head>
 <body class="w3-black">
@@ -405,6 +468,18 @@ a:hover {
 	</ul>
     </div>
  
+ <!-- Your separate image container -->
+<div id="single-image-container">
+  <img src="duplex-1.jpeg" alt="Separate Image" />
+</div>
+<div id="single-image-container">
+  <img src="duplex-2.jpeg" alt="Separate Image" />
+</div>
+
+<div id="single-image-container">
+  <img src="duplex-3.jpeg" alt="Separate Image" />
+</div>
+
 
   
   <div class="w3-content w3-justify" id="projects">
@@ -542,20 +617,34 @@ a:hover {
   <div class="address-heading">Gallery</div>
 </div>
     <!-- Grid for gallery -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div >
-        <img src="gallery_img1.png" style="width:110%">
-        
-      </div>
+     <div class="swiper myGallery">
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide"><img src="dainik-bhaskar-award.jpeg" alt="Image 1" /></div>
+      <div class="swiper-slide"><img src="gallery-1.jpg" alt="Image 2" /></div>
+      <div class="swiper-slide"><img src="gallery-2.jpg" alt="Image 3" /></div>
+	  <div class="swiper-slide"><img src="gallery-3.jpg" alt="Image 4" /></div>
+	  <div class="swiper-slide"><img src="gallery-4.jpg" alt="Image 4" /></div>
+      <div class="swiper-slide"><img src="gallery-5.jpg" alt="Image 5" /></div>
+      <div class="swiper-slide"><img src="gallery-6.jpg" alt="Image 6" /></div>
 
-     <!-- <div class="w3-half">
-        <img src="https://www.w3schools.com/w3images/underwater.jpg" style="width:100%">
-        <img src="https://www.w3schools.com/w3images/chef.jpg" style="width:100%">
-        <img src="https://www.w3schools.com/w3images/wedding.jpg" style="width:100%">
-        <img src="https://www.w3schools.com/w3images/p6.jpg" style="width:100%">
-      </div>
-	  -->
-   </div>   
+      <!-- Add more slides as needed -->
+    </div>
+
+    <!-- Pagination (optional) -->
+    <div class="swiper-pagination"></div>
+
+    <!-- Navigation Buttons (optional) -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+<!-- Lightbox Overlay -->
+<div id="lightbox-overlay">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Full Size Image" />
+</div>
+
+	
    </div>
 
    
@@ -612,6 +701,56 @@ a:hover {
 
 <!-- END PAGE CONTENT -->
 </div>
+ <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+  <!-- Swiper Init -->
+  <script>
+    const swiper = new Swiper('.myGallery', {
+      loop: true,
+      grabCursor: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+  <script>
+  const swiperImages = document.querySelectorAll('.myGallery .swiper-slide img');
+  const lightbox = document.getElementById('lightbox-overlay');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.getElementById('lightbox-close');
+
+  swiperImages.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    }
+  });
+  const singleImage = document.querySelector('#single-image-container img');
+
+singleImage.addEventListener('click', () => {
+  const lightbox = document.getElementById('lightbox-overlay');
+  const lightboxImg = document.getElementById('lightbox-img');
+  lightboxImg.src = singleImage.src;
+  lightbox.style.display = 'flex';
+});
+</script>
 </body>
 </html>
